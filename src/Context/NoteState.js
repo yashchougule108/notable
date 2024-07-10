@@ -41,7 +41,7 @@ const deleteNote= async (id)=>{
         
     });
     const json=await response.json();
-    console.log("deleted",json)
+    //console.log("deleted",json)
    const newnotes=notes.filter((note)=>{return note._id!==id});
    setnotes(newnotes);
 }
@@ -55,15 +55,17 @@ const editNote= async (id,title,description,tag)=>{
         body:JSON.stringify({title,description,tag})
         
     });
-    for(let index=0;index<notes.length;index++){
-        let element=notes[index];
+    let newNotes=JSON.parse(JSON.stringify(notes));
+    for(let index=0;index<newNotes.length;index++){
+        let element=newNotes[index];
         if(element._id===id){
-            element.title=title;
-            element.description=description;
-            element.tag=tag;
+            newNotes.title=title;
+            newNotes.description=description;
+            newNotes.tag=tag;
         }
 
     }
+    setnotes(newNotes)
 }
 
 

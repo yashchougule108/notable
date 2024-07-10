@@ -12,15 +12,16 @@ const Notes = () => {
   const ref = useRef(null);
   const refClose = useRef(null);
   const[note, setNote] = useState({
-    id: "",
+    id:"",
     etitle: "",
     edescription: "",
     etag: "",
   });
   const updateNote = (currentNote) => {
     ref.current.click();
+    setNote({id : currentNote._id , etitle : currentNote.title , edescription : currentNote.description , etag : currentNote.tag});
   };
-  const handleClick = (eve)=>{
+  const handleClick = (currnote)=>{
     console.log("updating the note ... " , note);
 
     editNote(note.id , note.etitle , note.edescription , note.etag);
@@ -123,7 +124,7 @@ const Notes = () => {
                 disabled={
                   note.etitle < 5 || note.edescription < 5 || note.etag < 3
                 }
-                onClick={handleClick}
+                onClick={()=>handleClick(note)}
                 type="button"
                 className="btn btn-primary"
               >
