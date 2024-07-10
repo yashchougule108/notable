@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaLinkedin, FaGithub, FaInstagram, FaCode } from 'react-icons/fa';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import './about.css';
 
 const socialLinks = [

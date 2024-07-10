@@ -1,13 +1,13 @@
-import React from "react";
-import Notes from "./Notes";
+import Notes from './Notes'
 
-const Home = () => {
-
+const Home = (props) => {
+  // destructuring
+  const {showAlert} = props;
   return (
     <div>
-      <Notes/>
+        <Notes showAlert={showAlert}/>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
