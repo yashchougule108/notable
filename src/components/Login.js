@@ -9,7 +9,7 @@ const Login = (props) => {
 
     const handleSubmit = async (eve)=>{
         eve.preventDefault();
-        const response = await fetch(`http://localhost:5001/api/auth/login`, {
+        const response = await fetch("http://localhost:5001/api/auth/login", {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             headers: {
               'Content-Type': 'application/json',
