@@ -11,7 +11,8 @@ const Signup = (props) => {
       eve.preventDefault();
       // destructuring (remove it form the credential)
       const {name , email , password } = credentail;
-      const response = await fetch(`https://notable-mauve.vercel.app/api/auth/createuser`,{ mode: 'no-cors'}, {
+      const response = await fetch(`https://notable-mauve.vercel.app/api/auth/createuser`, {
+        mode:'cors',
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
           headers: {
             'Content-Type': 'application/json',
