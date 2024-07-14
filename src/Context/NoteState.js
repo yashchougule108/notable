@@ -12,7 +12,7 @@ const NoteState = (props) =>{
     const getNotes= async ()=>{
         // api call  (bought from fetch api with header) to fetch all notes
         const response = await fetch(`https://notable-mauve.vercel.app/api/notes/fetchallnotes`,{
-           mode:'cors',
+           mode:'no-cors',
             method: 'GET', // *GET, POST, PUT, DELETE, etc.
             headers: {
               'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ const NoteState = (props) =>{
             // todo api call
             // api call  (bought from fetch api with header)
             const response = await fetch(`https://notable-mauve.vercel.app/api/notes/addnotes`,{
-              mode:'cors',
+              mode:'no-cors',
                 method: 'POST', // *GET, POST, PUT, DELETE, etc.
                 headers: {
                   'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ const NoteState = (props) =>{
         const deleteNote= async (id)=>{
             // todo api call
             const response = await fetch(`https://notable-mauve.vercel.app/api/notes/deletenote/${id}`,{
-              mode:'cors',
+              mode:'no-cors',
               method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
               headers: {
                 'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ const NoteState = (props) =>{
         const editNote= async (id , title , description , tag)=>{
             // api call  (bought from fetch api with header)
             const response = await fetch(`https://notable-mauve.vercel.app/api/notes/updateNote/${id}`, {
-              mode:'cors',
+              mode:'no-cors',
                 method: 'PUT', // *GET, POST, PUT, DELETE, etc.
                 headers: {
                   'Content-Type': 'application/json',

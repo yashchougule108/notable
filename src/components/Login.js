@@ -10,7 +10,7 @@ const Login = (props) => {
     const handleSubmit = async (eve)=>{
         eve.preventDefault();
         const response = await fetch(`https://notable-mauve.vercel.app/api/auth/login`,{
-            mode:'cors',
+            mode:'no-cors',
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             headers: {
               'Content-Type': 'application/json',

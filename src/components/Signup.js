@@ -12,7 +12,7 @@ const Signup = (props) => {
       // destructuring (remove it form the credential)
       const {name , email , password } = credentail;
       const response = await fetch(`https://notable-mauve.vercel.app/api/auth/createuser`, {
-        mode:'cors',
+        mode:'no-cors',
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
           headers: {
             'Content-Type': 'application/json',
