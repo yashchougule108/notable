@@ -11,7 +11,7 @@ const Signup = (props) => {
       eve.preventDefault();
       // destructuring (remove it form the credential)
       const {name , email , password } = credentail;
-      const response = await fetch(`http://localhost:5001/api/auth/createuser`, {
+      const response = await fetch(`https://notable-backend-phi.vercel.app/api/auth/createuser`, {
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
           headers: {
             'Content-Type': 'application/json',

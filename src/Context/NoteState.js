@@ -11,7 +11,7 @@ const NoteState = (props) =>{
 
     const getNotes= async ()=>{
         // api call  (bought from fetch api with header) to fetch all notes
-        const response = await fetch("http://localhost:5001/api/notes/fetchallnotes", {
+        const response = await fetch(`https://notable-backend-phi.vercel.app/api/notes/fetchallnotes`, {
             method: 'GET', // *GET, POST, PUT, DELETE, etc.
             headers: {
               'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ const NoteState = (props) =>{
         const addNote= async (title , description , tag)=>{
             // todo api call
             // api call  (bought from fetch api with header)
-            const response = await fetch(`${host}/api/notes/addnotes`, {
+            const response = await fetch(`https://notable-backend-phi.vercel.app/api/notes/addnotes`, {
                 method: 'POST', // *GET, POST, PUT, DELETE, etc.
                 headers: {
                   'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ const NoteState = (props) =>{
       // delete note
         const deleteNote= async (id)=>{
             // todo api call
-            const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
+            const response = await fetch(`https://notable-backend-phi.vercel.app/api/notes/deletenote/${id}`, {
               method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
               headers: {
                 'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ const NoteState = (props) =>{
       // edit the note
         const editNote= async (id , title , description , tag)=>{
             // api call  (bought from fetch api with header)
-            const response = await fetch(`${host}/api/notes/updateNote/${id}`, {
+            const response = await fetch(`https://notable-backend-phi.vercel.app/api/notes/updateNote/${id}`, {
                 method: 'PUT', // *GET, POST, PUT, DELETE, etc.
                 headers: {
                   'Content-Type': 'application/json',
