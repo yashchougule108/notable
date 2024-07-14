@@ -9,7 +9,7 @@ const Login = (props) => {
 
     const handleSubmit = async (eve)=>{
         eve.preventDefault();
-        const response = await fetch(`https://notable-backend-phi.vercel.app/api/auth/login`, {
+        const response = await fetch(`https://notable-backend-phi.vercel.app/api/auth/login`, { mode: 'no-cors'},{
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             headers: {
               'Content-Type': 'application/json',

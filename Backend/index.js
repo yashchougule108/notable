@@ -8,7 +8,11 @@ connectToMongo();
 
 const app = express()
 const port = 5001;
-app.use(cors())
+app.use(cors({
+  origin:["https://notable-fronted.vercel.app"],
+  methods:["POST","GET","PUT","DELETE"],
+  credentials:true
+}))
 app.use(express.json());
 //Available routes
 app.use('/',(req,res)=>{
