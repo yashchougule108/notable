@@ -11,7 +11,7 @@ const NoteState = (props) =>{
 
     const getNotes= async ()=>{
         // api call  (bought from fetch api with header) to fetch all notes
-        const response = await fetch(`https://notable-backend-phi.vercel.app/api/notes/fetchallnotes`,{
+        const response = await fetch(`https://notable-mauve.vercel.app/api/notes/fetchallnotes`,{
            mode:'cors',
             method: 'GET', // *GET, POST, PUT, DELETE, etc.
             headers: {
@@ -31,7 +31,7 @@ const NoteState = (props) =>{
         const addNote= async (title , description , tag)=>{
             // todo api call
             // api call  (bought from fetch api with header)
-            const response = await fetch(`https://notable-backend-phi.vercel.app/api/notes/addnotes`,{
+            const response = await fetch(`https://notable-mauve.vercel.app/api/notes/addnotes`,{
               mode:'cors',
                 method: 'POST', // *GET, POST, PUT, DELETE, etc.
                 headers: {
@@ -46,7 +46,7 @@ const NoteState = (props) =>{
       // delete note
         const deleteNote= async (id)=>{
             // todo api call
-            const response = await fetch(`https://notable-backend-phi.vercel.app/api/notes/deletenote/${id}`,{
+            const response = await fetch(`https://notable-mauve.vercel.app/api/notes/deletenote/${id}`,{
               mode:'cors',
               method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
               headers: {
@@ -63,7 +63,7 @@ const NoteState = (props) =>{
       // edit the note
         const editNote= async (id , title , description , tag)=>{
             // api call  (bought from fetch api with header)
-            const response = await fetch(`https://notable-backend-phi.vercel.app/api/notes/updateNote/${id}`, {
+            const response = await fetch(`https://notable-mauve.vercel.app/api/notes/updateNote/${id}`, {
               mode:'cors',
                 method: 'PUT', // *GET, POST, PUT, DELETE, etc.
                 headers: {
