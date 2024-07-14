@@ -12,13 +12,16 @@ const Signup = (props) => {
       // destructuring (remove it form the credential)
       const {name , email , password } = credentail;
       const response = await fetch(`https://notable-mauve.vercel.app/api/auth/createuser`, {
-        mode:'no-cors',
+
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({name:credentail.name ,email: credentail.email , password: credentail.password}) 
         });
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
         const json = await response.json();
         console.log(json);
           // save the auth token and redirect (if success) 

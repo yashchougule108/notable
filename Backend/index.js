@@ -11,9 +11,6 @@ const port = 5001;
 app.use(cors())
 app.use(express.json());
 //Available routes
-app.use('/',(req,res)=>{
-  res.send("server is running")
-})
 app.use('/api/auth',require('./Routes/auth'))
 app.use('/api/notes',require('./Routes/notes'))
 
